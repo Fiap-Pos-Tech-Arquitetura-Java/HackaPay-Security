@@ -24,7 +24,6 @@ import static org.springframework.security.config.http.SessionCreationPolicy.STA
 
 @Configuration
 @EnableWebSecurity
-@EnableMethodSecurity
 public class BasicSecurityConfig {
 	private static final Logger LOGGER = LoggerFactory
 			.getLogger(BasicSecurityConfig.class);
@@ -62,7 +61,7 @@ public class BasicSecurityConfig {
 				.authorizeHttpRequests(request -> request
 						.requestMatchers(HttpMethod.POST,"/user").permitAll()
 						.requestMatchers(HttpMethod.GET,"/user/findByLogin/**").permitAll()
-						.requestMatchers("/user/login").permitAll()
+						.requestMatchers("/user/autenticacao").permitAll()
 						.requestMatchers("/swagger-ui.html").permitAll()
 						.requestMatchers("/swagger-ui/**").permitAll()
 						.requestMatchers("/v3/api-docs/**").permitAll()
