@@ -52,7 +52,7 @@ public class JwtService {
 
 	private String createToken(Map<String, Object> claims, User user) {
 		return Jwts.builder().setClaims(claims)
-				.setSubject(user.getLogin())
+				.setSubject(user.getUsuario())
 				.claim("idUser", user.getId())
 				.setIssuedAt(new Date(System.currentTimeMillis()))
 				.setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 2))

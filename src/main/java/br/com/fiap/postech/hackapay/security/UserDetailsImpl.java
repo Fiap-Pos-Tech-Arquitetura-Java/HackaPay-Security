@@ -1,13 +1,11 @@
 package br.com.fiap.postech.hackapay.security;
 
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.io.Serial;
 import java.util.Collection;
 import java.util.List;
-import java.util.Objects;
 
 public class UserDetailsImpl implements UserDetails {
 
@@ -24,7 +22,7 @@ public class UserDetailsImpl implements UserDetails {
 
 	public UserDetailsImpl(User user) {
 		this();
-		this.username = user.getLogin();
+		this.username = user.getUsuario();
 		this.password = user.getPassword();
 	}
 

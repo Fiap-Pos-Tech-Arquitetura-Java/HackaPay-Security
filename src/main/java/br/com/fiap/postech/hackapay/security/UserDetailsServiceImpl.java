@@ -25,7 +25,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		if (user != null) {
 			return new UserDetailsImpl(user);
 		} else {
-			throw new ResponseStatusException(HttpStatus.FORBIDDEN);
+			throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
 		}
 	}
 }

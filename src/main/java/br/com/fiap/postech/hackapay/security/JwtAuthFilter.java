@@ -52,12 +52,11 @@ public class JwtAuthFilter extends OncePerRequestFilter {
                     authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                     SecurityContextHolder.getContext().setAuthentication(authToken);
                 }
-            
             }
             filterChain.doFilter(request, response);
         } catch(ExpiredJwtException | UnsupportedJwtException | MalformedJwtException
                 | ResponseStatusException e) {
-            response.setStatus(HttpStatus.FORBIDDEN.value());
+            response.setStatus(HttpStatus.UNAUTHORIZED.value());
         }
     }
 }
