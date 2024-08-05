@@ -59,9 +59,9 @@ public class BasicSecurityConfig {
 	SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.csrf(AbstractHttpConfigurer::disable)
 				.authorizeHttpRequests(request -> request
-						.requestMatchers(HttpMethod.POST,"/user").permitAll()
-						.requestMatchers(HttpMethod.GET,"/user/findByLogin/**").permitAll()
-						.requestMatchers("/user/autenticacao").permitAll()
+						.requestMatchers(HttpMethod.POST,"/api/usuario").permitAll()
+						.requestMatchers(HttpMethod.GET,"/api/usuario/findByLogin/**").permitAll()
+						.requestMatchers("/api/autenticacao").permitAll()
 						.requestMatchers("/swagger-ui.html").permitAll()
 						.requestMatchers("/swagger-ui/**").permitAll()
 						.requestMatchers("/v3/api-docs/**").permitAll()
